@@ -4,7 +4,7 @@ import scanner
 
 
 def run(source):
-    tokens  = scanner.scan_tokens(source)
+    tokens  = scanner.Scanner(source).scan_tokens()
     for token in tokens:
         print(token)
 
@@ -14,7 +14,7 @@ def run_file(filename):
 
 def run_prompt():
     while True:
-        run(input('> '))
+        run(raw_input('> '))
 
 def error(line_num, message, where=''):
     print('[line {}] Error {}: {}'.format(line_num, where, msg))
